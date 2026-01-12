@@ -15,7 +15,7 @@
 We will use a Monorepo structure for learning purposes, which is easier to manage when starting out but allows each service to be deployed independently.
 
 Proposed Structure
-
+```bash
 mern-microservices/
 ├── auth-service/           # User Auth, JWT, Security
 ├── product-service/        # Product Catalog
@@ -25,13 +25,13 @@ mern-microservices/
 │   └── prometheus.yml
 ├── docker-compose.yml      # Orchestrates all services
 └── .env                    # Root environment variables
-
+```
 
 ## Inner Service Structure
 Each service (e.g., auth-service) will follow this secure, layered pattern:
 
 Plaintext
-
+```sh
 auth-service/
 ├── src/
 │   ├── controllers/    # Request handling
@@ -43,7 +43,7 @@ auth-service/
 │   └── app.js          # Entry point
 ├── package.json
 └── Dockerfile
-
+```
 
 # 3. Implementing Prometheus Metrics
 To make this "DevOps ready," we'll use ``prom-client`` to expose metrics. Every service should have a ``/metrics ``endpoint that Prometheus can scrape.
